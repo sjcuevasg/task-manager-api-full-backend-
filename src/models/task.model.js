@@ -20,8 +20,6 @@ const getTasks = async () => {
             return rows;
 };
 
-
-
 const getTask = async (idTask) => {
       const [rows] = await pool.execute(
             'SELECT t.id,t.title,t.user_id,u.name AS user_name FROM tasks t JOIN users u ON t.user_id = u.id WHERE t.id = ?',[idTask]
